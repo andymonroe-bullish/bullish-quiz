@@ -661,21 +661,6 @@ function ModelResult({
           </a>
         </div>
 
-        {/* ── Why Not Others ── */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 mb-6 shadow-sm">
-          <h3 className="text-sm font-bold text-slate-900 mb-3">
-            Why Not Other Models?
-          </h3>
-          {content.whyNotOthers.map((item) => (
-            <p key={item.model} className="text-sm text-slate-500 mb-2 last:mb-0">
-              <span className="font-semibold text-slate-700">
-                {item.model}:
-              </span>{" "}
-              {item.reason}
-            </p>
-          ))}
-        </div>
-
         <button
           onClick={onRestart}
           className="w-full bg-white border border-slate-200 text-slate-700 px-6 py-3.5 rounded-xl font-medium hover:bg-slate-50 transition flex items-center justify-center gap-2"
