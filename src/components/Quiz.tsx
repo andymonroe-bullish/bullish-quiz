@@ -639,6 +639,16 @@ function ModelResult({
               Watch Full Case Study
             </a>
           )}
+          {content.model === "affinity" && (
+            <a
+              href="https://youtu.be/-WcwkwiYvUM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-5 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Watch Full Case Study
+            </a>
+          )}
         </div>
 
         {/* ── CTA ── */}
