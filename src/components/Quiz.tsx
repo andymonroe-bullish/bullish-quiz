@@ -566,29 +566,47 @@ function ModelResult({
           </ul>
         </div>
 
-        {/* ── Stats ── */}
-        <div
-          className={`${content.accentColor} border ${content.borderColor} rounded-2xl p-8 mb-6`}
-        >
-          <h2 className="text-lg font-bold text-slate-900 mb-5">
-            What You Could Generate
-          </h2>
-          <div className="grid grid-cols-2 gap-5">
-            {content.stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-1">
-                  {stat.label}
-                </p>
-                <p
-                  className="text-lg font-bold"
-                  style={{ color: stat.highlight ? content.accentHex : undefined }}
+        {/* ── What's Possible ── */}
+        {content.whatsPossible.length > 0 && (
+          <div
+            className={`${content.accentColor} border ${content.borderColor} rounded-2xl p-8 mb-6`}
+          >
+            <h2 className="text-lg font-bold text-slate-900 mb-1">
+              What&apos;s Possible
+            </h2>
+            <p className="text-sm text-slate-500 mb-5">Example scenario</p>
+            <div className="space-y-3">
+              {content.whatsPossible.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-start justify-between gap-4"
                 >
-                  {stat.value}
+                  <span className="text-sm text-slate-600">{item.label}</span>
+                  <span
+                    className={`text-sm font-bold text-right ${
+                      item.highlight ? "" : "text-slate-900"
+                    }`}
+                    style={item.highlight ? { color: content.accentHex } : undefined}
+                  >
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+            {content.model === "affinity" && (
+              <div className="mt-5 pt-5 border-t border-blue-200">
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  <span className="font-bold text-slate-900">Keep in mind:</span>{" "}
+                  Affinity Events aren&apos;t designed to maximize revenue. Their main
+                  objective is to build affinity with your audience &mdash; create
+                  community, establish trust, and deliver an insane amount of value.
+                  The real ROI is industry authority, positioning, and branding that
+                  compounds over time.
                 </p>
               </div>
-            ))}
+            )}
           </div>
-        </div>
+        )}
 
         {/* ── Case Study ── */}
         <div className="bg-slate-900 text-white rounded-2xl p-8 mb-6">
@@ -601,6 +619,26 @@ function ModelResult({
           <p className="text-slate-300 leading-relaxed">
             {content.caseStudy.description}
           </p>
+          {content.model === "ascension" && (
+            <a
+              href="https://youtu.be/SQGrBwHd-tA?si=fXct42I95JzKJSoS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-5 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Watch Full Case Study
+            </a>
+          )}
+          {content.model === "fulfillment" && (
+            <a
+              href="https://youtu.be/AP5BGt4Nr_Q?si=fCzt1b3fkMuqWENo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-5 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Watch Full Case Study
+            </a>
+          )}
         </div>
 
         {/* ── CTA ── */}
@@ -608,16 +646,19 @@ function ModelResult({
           className={`bg-gradient-to-br ${content.gradient} border-2 ${content.borderColor} rounded-2xl p-8 mb-6 text-center`}
         >
           <h2 className="text-xl font-bold text-slate-900 mb-2">
-            Want to dive deeper?
+            Book Your Free Event Model Implementation Call
           </h2>
           <p className="text-slate-600 mb-6">
-            Book your Event Model implementation call below.
+            We&apos;ll walk through your results together and map out your event strategy.
           </p>
-          <button
-            className={`${content.buttonColor} ${content.buttonHover} text-white px-8 py-4 rounded-xl font-bold text-lg transition-all w-full shadow-lg`}
+          <a
+            href="https://api.leadconnectorhq.com/widget/bookings/event-model-implementation-cal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-block ${content.buttonColor} ${content.buttonHover} text-white px-8 py-4 rounded-xl font-bold text-lg transition-all w-full shadow-lg`}
           >
-            Create This Event
-          </button>
+            Book My Free Call
+          </a>
         </div>
 
         {/* ── Why Not Others ── */}

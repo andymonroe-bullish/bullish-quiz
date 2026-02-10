@@ -18,6 +18,7 @@ export type ResultContent = {
   whatIsIt: string;
   whyItFits: string[];
   stats: { label: string; value: string; highlight?: boolean }[];
+  whatsPossible: { label: string; value: string; highlight?: boolean }[];
   caseStudy: {
     company: string;
     description: string;
@@ -53,6 +54,16 @@ export const resultContent: Record<string, ResultContent> = {
       { label: "Ticket Price", value: "$500\u2013$1,500" },
       { label: "Expected Conversion", value: "15\u201325%" },
       { label: "Projected Revenue", value: "$60K\u2013$180K", highlight: true },
+    ],
+    whatsPossible: [
+      { label: "Attendees", value: "50" },
+      { label: "Avg Ticket Price", value: "$997" },
+      { label: "Offer Price", value: "$12,000" },
+      { label: "Conversion Rate", value: "20%" },
+      { label: "Total Revenue", value: "$169,850", highlight: true },
+      { label: "Budget", value: "$30,000" },
+      { label: "ROI", value: "5.7x", highlight: true },
+      { label: "Indirect ROI", value: "Authority, Social Proof, Affinity, & Priceless Marketing Assets" },
     ],
     caseStudy: {
       company: "Fund Launch",
@@ -100,6 +111,12 @@ export const resultContent: Record<string, ResultContent> = {
       { label: "Renewal Lift", value: "60% \u2192 85%+" },
       { label: "LTV Impact", value: "+$50K\u2013$200K/year", highlight: true },
     ],
+    whatsPossible: [
+      { label: "Attendees", value: "50" },
+      { label: "Renewal Increase", value: "+20%" },
+      { label: "LTV Increase", value: "+20%" },
+      { label: "New Revenue From LTV Increase & Renewals", value: "$50K\u2013$200K+", highlight: true },
+    ],
     caseStudy: {
       company: "High-Ticket Accelerator",
       description:
@@ -146,6 +163,7 @@ export const resultContent: Record<string, ResultContent> = {
       { label: "Annual Model", value: "$25K\u2013$100K/year" },
       { label: "Projected Revenue", value: "$150K\u2013$750K/year", highlight: true },
     ],
+    whatsPossible: [],
     caseStudy: {
       company: "Inner Circle Mastermind",
       description:
@@ -191,6 +209,14 @@ export const resultContent: Record<string, ResultContent> = {
       { label: "Ticket Price", value: "$300\u2013$2,000" },
       { label: "Key Outcome", value: "Brand loyalty & word-of-mouth" },
       { label: "Long-term Impact", value: "Priceless positioning", highlight: true },
+    ],
+    whatsPossible: [
+      { label: "Attendees", value: "25" },
+      { label: "Ticket Price", value: "$4,000" },
+      { label: "Sponsor Revenue", value: "$35,000" },
+      { label: "Total Revenue", value: "$135,000", highlight: true },
+      { label: "Budget", value: "$35,000" },
+      { label: "ROI", value: "3.9x", highlight: true },
     ],
     caseStudy: {
       company: "Offline Mode",
