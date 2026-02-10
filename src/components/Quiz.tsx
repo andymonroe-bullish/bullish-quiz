@@ -303,70 +303,139 @@ export default function Quiz() {
   );
 }
 
-// ── Too Early Result ───────────────────────────────────────
+// ── Virtual Events Result ───────────────────────────────────────
 function TooEarlyResult({ onRestart }: { onRestart: () => void }) {
+  const accentHex = "#0d9488";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-12 px-4">
-      <div className="max-w-2xl mx-auto animate-fadeIn">
-        <div className="bg-amber-50 border-2 border-amber-200 rounded-2xl p-8 md:p-10 mb-6">
-          <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-5">
-            <TrendingUp className="w-6 h-6 text-amber-600" />
-          </div>
-          <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            You&apos;re in the Early Growth Stage
+      <div className="max-w-2xl mx-auto">
+        {/* ── Hero ── */}
+        <div className="text-center mb-10 animate-revealUp">
+          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-4">
+            Your Recommended Event Model
+          </p>
+          <h1
+            className="font-cursive text-5xl md:text-7xl mb-3 leading-tight"
+            style={{ color: accentHex }}
+          >
+            Virtual Events
           </h1>
-          <p className="text-slate-600 leading-relaxed">
-            You&apos;re building a solid foundation. Events work best when you
-            have an established audience and revenue base. Here&apos;s what to
-            focus on first:
+          <p className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">
+            The Growth Launchpad
+          </p>
+          <div
+            className="mx-auto mt-5 h-1 w-16 rounded-full"
+            style={{ backgroundColor: accentHex }}
+          />
+        </div>
+
+        {/* ── Description ── */}
+        <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl p-8 md:p-10 mb-6 animate-fadeIn">
+          <p className="text-slate-700 text-lg leading-relaxed">
+            You&apos;re in the perfect position to start leveraging virtual events to grow your audience, establish trust, and acquire clients. Virtual events are low-cost, high-impact, and the fastest way to build the foundation for in-person events down the road.
           </p>
         </div>
 
+        {/* ── What Are Virtual Events ── */}
+        <div className="bg-white border border-slate-200 rounded-2xl p-8 mb-6 shadow-sm">
+          <h2 className="text-lg font-bold text-slate-900 mb-3">
+            Why Virtual Events?
+          </h2>
+          <p className="text-slate-600 leading-relaxed">
+            Virtual events let you leverage the power of events without the overhead of in-person. They build trust faster than content alone, position you as an authority in your space, and give your audience a real taste of what it&apos;s like to work with you. They&apos;re also the best way to build the audience and revenue base you&apos;ll need when you&apos;re ready to go in-person.
+          </p>
+        </div>
+
+        {/* ── Virtual Event Models ── */}
         <div className="bg-white border border-slate-200 rounded-2xl p-8 mb-6 shadow-sm">
           <h2 className="text-lg font-bold text-slate-900 mb-5">
-            Recommended Next Steps
+            Your Virtual Event Models
           </h2>
-          <ul className="space-y-4">
-            {[
-              {
-                icon: TrendingUp,
-                text: "Focus on reaching $30K+/month in revenue",
-              },
-              {
-                icon: Users,
-                text: "Build your audience to 2,000+ people",
-              },
-              {
-                icon: Award,
-                text: "Solidify your core offer and client acquisition",
-              },
-            ].map((item) => (
-              <li key={item.text} className="flex items-start gap-3">
-                <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-4 h-4 text-blue-600" />
+          <div className="space-y-5">
+            {/* Webinars */}
+            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-6">
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: accentHex + "20" }}
+                >
+                  <Users className="w-5 h-5" style={{ color: accentHex }} />
                 </div>
-                <span className="text-slate-700 pt-1.5">{item.text}</span>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1">
+                    Webinars
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    60&ndash;90 minute virtual events designed to acquire clients. Teach on a specific problem, provide massive value, and invite attendees to work with you further. Low cost, high conversion, and repeatable.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Virtual Workshops & Challenges */}
+            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-6">
+              <div className="flex items-start gap-4">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: accentHex + "20" }}
+                >
+                  <Award className="w-5 h-5" style={{ color: accentHex }} />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1">
+                    Virtual Workshops &amp; Challenges
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    1, 3, or 5-day virtual events designed to establish trust, grow your authority, and acquire high-ticket clients. These give attendees a deeper experience and more time to build a relationship with you before making a buying decision.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Why It Fits ── */}
+        <div className="bg-white border border-slate-200 rounded-2xl p-8 mb-6 shadow-sm">
+          <h2 className="text-lg font-bold text-slate-900 mb-4">
+            Why This Fits Your Business
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "Virtual events are the fastest way to build trust and authority with your audience",
+              "Low overhead means you can start immediately with minimal risk",
+              "They build the audience and revenue base you need for in-person events down the road",
+            ].map((reason) => (
+              <li key={reason} className="flex items-start gap-3">
+                <div
+                  className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{ backgroundColor: accentHex + "20" }}
+                >
+                  <Check className="w-3 h-3" style={{ color: accentHex }} />
+                </div>
+                <span className="text-slate-700">{reason}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-6">
-          <h3 className="text-lg font-bold text-slate-900 mb-2">
-            Free Resource
-          </h3>
-          <p className="text-slate-600 mb-5">
-            &ldquo;How to Build an Event-Ready Business&rdquo; &mdash; our
-            guide to preparing for your first successful event.
+        {/* ── CTA ── */}
+        <div className="bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl p-8 mb-6 text-center">
+          <h2 className="text-xl font-bold text-slate-900 mb-2">
+            Join Our Free Community
+          </h2>
+          <p className="text-slate-600 mb-6">
+            Join our free community of coaches &amp; community owners leveraging events to scale their business.
           </p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-            Download Free Guide
-          </button>
+          <a
+            href="https://www.skool.com/event"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all w-full shadow-lg"
+          >
+            Join for Free
+          </a>
         </div>
-
-        <p className="text-center text-sm text-slate-500 mb-6">
-          We&apos;ll keep you updated on event strategies as you grow.
-        </p>
 
         <button
           onClick={onRestart}

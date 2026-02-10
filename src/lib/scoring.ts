@@ -105,10 +105,10 @@ export type QuizResult = {
 
 export function calculateResult(answers: Record<string, string | string[]>): QuizResult {
   // Disqualification checks
+  // Only show "too early" if BOTH revenue is under $30K AND reach is under 2K
   if (
     answers.primaryOffer === "still-building" ||
-    answers.monthlyRevenue === "under-30k" ||
-    answers.totalReach === "under-2k"
+    (answers.monthlyRevenue === "under-30k" && answers.totalReach === "under-2k")
   ) {
     return {
       qualified: false,
